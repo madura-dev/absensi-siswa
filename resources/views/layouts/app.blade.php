@@ -7,11 +7,11 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
         <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
+            href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-flags.min.css">
         <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-payments.min.css">
+            href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-payments.min.css">
         <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-vendors.min.css">
+            href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler-vendors.min.css">
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
@@ -22,16 +22,16 @@
     <body>
         <div class="page">
             <!-- Sidebar -->
-            <x-sidebar/>
+            <x-sidebar />
             <!-- Navbar -->
-            <x-header/>
+            <x-header />
             <div class="page-wrapper">
                 <!-- Page header -->
-                {{$title}}
+                {{ $title }}
                 <!-- Page body -->
                 <div class="page-body">
                     <div class="container-xl">
-                        {{$slot}}
+                        {{ $slot }}
                     </div>
                 </div>
                 <footer class="footer footer-transparent d-print-none">
@@ -84,8 +84,7 @@
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/js/tabler.min.js"></script>
-        <link rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/core@1.0.0-beta17/dist/css/tabler.min.css">
         @livewireScripts
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <x-livewire-alert::scripts />

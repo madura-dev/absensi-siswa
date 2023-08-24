@@ -6,16 +6,16 @@
                 <div class="col">
                     <!-- Page pre-title -->
                     <div class="page-pretitle">
-                        {{$pretitle}}
+                        {{ $pretitle }}
                     </div>
                     <h2 class="page-title">
-                        {{$title}}
+                        {{ $title }}
                     </h2>
                 </div>
                 <!-- Page title actions -->
                 <div class="d-print-none col-auto ms-auto">
                     <div class="btn-list">
-                        {{$slot}}
+                        {{ $slot }}
                     </div>
                 </div>
             </div>
