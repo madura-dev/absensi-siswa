@@ -17,7 +17,9 @@ class MajorFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'major_code' => "MJ-" . $this->faker->numberBetween(1, 15),
+            'major_name'  => $this->faker->title,
+            'major_alias' => $this->faker->title
         ];
     }
 }
