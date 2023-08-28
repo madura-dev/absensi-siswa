@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('classrooms', function (Blueprint $table) {
             $table->id();
+            $table->string('grade_class', 5);
+            $table->string('group_class', 2);
+            $table->foreignId('major_id')->constrained('majors');
             $table->timestamps();
         });
     }
