@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::get('/jurusan', \App\Http\Livewire\ShowMajor::class)->name('jurusan');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
