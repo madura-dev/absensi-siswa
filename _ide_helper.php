@@ -4,7 +4,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 10.17.1.
+ * Generated for Laravel 10.20.0.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -4788,102 +4788,6 @@
         public static function flushMacros()
         {
                         \Illuminate\Cookie\CookieJar::flushMacros();
-        }
-         
-    }
-            /**
-     * 
-     *
-     * @see \Illuminate\Encryption\Encrypter
-     */ 
-        class Crypt {
-                    /**
-         * Determine if the given key and cipher combination is valid.
-         *
-         * @param string $key
-         * @param string $cipher
-         * @return bool 
-         * @static 
-         */ 
-        public static function supported($key, $cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::supported($key, $cipher);
-        }
-                    /**
-         * Create a new encryption key for the given cipher.
-         *
-         * @param string $cipher
-         * @return string 
-         * @static 
-         */ 
-        public static function generateKey($cipher)
-        {
-                        return \Illuminate\Encryption\Encrypter::generateKey($cipher);
-        }
-                    /**
-         * Encrypt the given value.
-         *
-         * @param mixed $value
-         * @param bool $serialize
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encrypt($value, $serialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encrypt($value, $serialize);
-        }
-                    /**
-         * Encrypt a string without serialization.
-         *
-         * @param string $value
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\EncryptException
-         * @static 
-         */ 
-        public static function encryptString($value)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->encryptString($value);
-        }
-                    /**
-         * Decrypt the given value.
-         *
-         * @param string $payload
-         * @param bool $unserialize
-         * @return mixed 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decrypt($payload, $unserialize = true)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decrypt($payload, $unserialize);
-        }
-                    /**
-         * Decrypt the given string without unserialization.
-         *
-         * @param string $payload
-         * @return string 
-         * @throws \Illuminate\Contracts\Encryption\DecryptException
-         * @static 
-         */ 
-        public static function decryptString($payload)
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->decryptString($payload);
-        }
-                    /**
-         * Get the encryption key that the encrypter is currently using.
-         *
-         * @return string 
-         * @static 
-         */ 
-        public static function getKey()
-        {
-                        /** @var \Illuminate\Encryption\Encrypter $instance */
-                        return $instance->getKey();
         }
          
     }
@@ -11257,7 +11161,7 @@
          *
          * @param string|null $key
          * @param mixed $default
-         * @return \Symfony\Component\HttpFoundation\ParameterBag|mixed 
+         * @return \Symfony\Component\HttpFoundation\InputBag|mixed 
          * @static 
          */ 
         public static function json($key = null, $default = null)
@@ -11419,7 +11323,7 @@
                     /**
          * Set the JSON payload for the request.
          *
-         * @param \Symfony\Component\HttpFoundation\ParameterBag $json
+         * @param \Symfony\Component\HttpFoundation\InputBag $json
          * @return \Illuminate\Http\Request 
          * @static 
          */ 
@@ -16826,6 +16730,18 @@
                         return $instance->withKeyResolver($keyResolver);
         }
                     /**
+         * Set the callback that should be used to attempt to resolve missing named routes.
+         *
+         * @param callable $missingNamedRouteResolver
+         * @return \Illuminate\Routing\UrlGenerator 
+         * @static 
+         */ 
+        public static function resolveMissingNamedRoutesUsing($missingNamedRouteResolver)
+        {
+                        /** @var \Illuminate\Routing\UrlGenerator $instance */
+                        return $instance->resolveMissingNamedRoutesUsing($missingNamedRouteResolver);
+        }
+                    /**
          * Get the root controller namespace.
          *
          * @return string 
@@ -18195,6 +18111,20 @@
         {
                         /** @var \Illuminate\Foundation\Vite $instance */
                         return $instance->asset($asset, $buildDirectory);
+        }
+                    /**
+         * Get the content of a given asset.
+         *
+         * @param string $asset
+         * @param string|null $buildDirectory
+         * @return string 
+         * @throws \Exception
+         * @static 
+         */ 
+        public static function content($asset, $buildDirectory = null)
+        {
+                        /** @var \Illuminate\Foundation\Vite $instance */
+                        return $instance->content($asset, $buildDirectory);
         }
                     /**
          * Get a unique hash representing the current manifest, or null if there is no manifest.
@@ -20411,7 +20341,6 @@ namespace  {
             class Cache extends \Illuminate\Support\Facades\Cache {}
             class Config extends \Illuminate\Support\Facades\Config {}
             class Cookie extends \Illuminate\Support\Facades\Cookie {}
-            class Crypt extends \Illuminate\Support\Facades\Crypt {}
             class Date extends \Illuminate\Support\Facades\Date {}
             class DB extends \Illuminate\Support\Facades\DB {}
             class Eloquent extends \Illuminate\Database\Eloquent\Model {             
@@ -20724,7 +20653,7 @@ namespace  {
             }
              
                 /**
-             * Get the first record matching the attributes or create it.
+             * Get the first record matching the attributes. If the record is not found, create it.
              *
              * @param array $attributes
              * @param array $values
@@ -20735,6 +20664,20 @@ namespace  {
             {
                                 /** @var \Illuminate\Database\Eloquent\Builder $instance */
                                 return $instance->firstOrCreate($attributes, $values);
+            }
+             
+                /**
+             * Attempt to create the record. If a unique constraint violation occurs, attempt to find the matching record.
+             *
+             * @param array $attributes
+             * @param array $values
+             * @return \Illuminate\Database\Eloquent\Model|static 
+             * @static 
+             */ 
+            public static function createOrFirst($attributes = [], $values = [])
+            {
+                                /** @var \Illuminate\Database\Eloquent\Builder $instance */
+                                return $instance->createOrFirst($attributes, $values);
             }
              
                 /**
