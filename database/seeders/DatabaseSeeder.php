@@ -15,14 +15,16 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Zaidun Ngodingun',
-            'email' => 'zaidun@test.com',
-            'password' => bcrypt('Bismillah')
-        ]);
+        // User::factory()->create([
+        //     'name' => 'Zaidun Ngodingun',
+        //     'email' => 'zaidun@test.com',
+        //     'password' => bcrypt('Bismillah')
+        // ]);
 
         $this->call([
-            MajorSeeder::class
+            MajorSeeder::class,
+            ClassroomSeeder::class,
+            TeacherSeeder::class,
         ]);
     }
 }
