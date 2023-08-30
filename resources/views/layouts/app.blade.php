@@ -27,7 +27,7 @@
             <x-header />
             <div class="page-wrapper">
                 <!-- Page header -->
-                {{ $title }}
+                {{-- {{ $title}} --}}
                 <!-- Page body -->
                 <div class="page-body">
                     <div class="container-xl">
@@ -90,3 +90,4 @@
         <x-livewire-alert::scripts />
     </body>
 </html>
+
