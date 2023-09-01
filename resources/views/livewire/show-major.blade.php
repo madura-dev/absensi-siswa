@@ -8,6 +8,7 @@
                             <th>Kode Jurusan</th>
                             <th>Nama Jurusan</th>
                             <th>Nama Kode</th>
+                            <th>tes</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
@@ -24,9 +25,11 @@
                                     <td>
                                         {{ $Major->major_alias }}
                                     </td>
+                                    <td>dd{{ $Major->id }}</td>
                                     <td>
                                         <button class="btn btn-primary btn-sm">Edit</button>
-                                        <button class="btn btn-danger btn-sm">Delete</button>
+                                        <button onclick="deleteMajor({{ $Major->id }})"
+                                            class="btn btn-danger btn-sm">Delete</button>
                                     </td>
                                 </tr>
                             @endforeach
@@ -43,3 +46,9 @@
         </div>
     </div>
 </div>
+<script>
+    function deleteMajor(id) {
+        if (confirm("Are you sure to delete this record?"))
+            window.livewire.emit('deleteMajor', id);
+    }
+</script>
