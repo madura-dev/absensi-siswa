@@ -105,7 +105,7 @@
                                 <a class="dropdown-item" href="./empty.html">
                                     Tambah Guru
                                 </a>
-                                <a class="dropdown-item" href="./accordion.html">
+                                <a class="dropdown-item" href="/guru">
                                     Semua Guru
                                 </a>
                             </div>
