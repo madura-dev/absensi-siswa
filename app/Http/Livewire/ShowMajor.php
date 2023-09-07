@@ -8,7 +8,7 @@ use App\Models\Major;
 class ShowMajor extends Component
 {
 
-    public $major;
+    public $major, $major_code, $major_name, $major_alias;
     protected $listeners = [
         'deleteMajor' => 'destroy'
     ];
@@ -17,6 +17,28 @@ class ShowMajor extends Component
 
         $this->major = Major::select('id', 'major_code', 'major_name', 'major_alias')->get();
         return view('livewire.show-major');
+    }
+    public function store()
+    {
+        // Validate Form Request
+        try {
+            // Create Category
+            Major::create([
+                'major_code' => $this->major_code,
+                'major_name' => $this->major_name,
+                'major_alias' => $this->major_alias
+            ]);
+
+            // Set Flash Message
+            session()->flash('success', 'Major Created Successfully!!');
+            // Reset Form Fields After Creating Category
+            $this->resetFields();
+        } catch (\Exception $e) {
+            // Set Flash Message
+            session()->flash('error', 'Something goes wrong while creating category!!');
+            // Reset Form Fields After Creating Category
+            $this->resetFields();
+        }
     }
     public function destroy($id)
     {
