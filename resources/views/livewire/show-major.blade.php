@@ -12,7 +12,11 @@
                         {{ session()->get('error') }}
                     </div>
                 @endif
-                @include('livewire.create-major')
+                @if ($updateMajor)
+                    @include('livewire.update-major')
+                @else
+                    @include('livewire.create-major')
+                @endif
             </div>
         </div>
     </div>
@@ -46,7 +50,8 @@
                                         </td>
                                         <td>dd{{ $Major->id }}</td>
                                         <td>
-                                            <button class="btn btn-primary btn-sm">Edit</button>
+                                            <button wire:click="edit({{ $Major->id }})"
+                                                class="btn btn-primary btn-sm">Edit</button>
                                             <button onclick="deleteMajor({{ $Major->id }})"
                                                 class="btn btn-danger btn-sm">Delete</button>
                                         </td>
