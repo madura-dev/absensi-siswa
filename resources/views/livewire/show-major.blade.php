@@ -31,7 +31,6 @@
                                 <th>Kode Jurusan</th>
                                 <th>Nama Jurusan</th>
                                 <th>Nama Kode</th>
-                                <th>tes</th>
                                 <th>Opsi</th>
                             </tr>
                         </thead>
@@ -48,7 +47,6 @@
                                         <td>
                                             {{ $Major->major_alias }}
                                         </td>
-                                        <td>dd{{ $Major->id }}</td>
                                         <td>
                                             <button wire:click="edit({{ $Major->id }})"
                                                 class="btn btn-primary btn-sm">Edit</button>
