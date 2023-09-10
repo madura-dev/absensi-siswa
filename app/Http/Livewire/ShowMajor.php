@@ -10,13 +10,14 @@ class ShowMajor extends Component
 
     public $major, $major_code, $major_name, $major_alias, $major_id;
     public $updateMajor = false;
+    public $search = '';
     protected $listeners = [
         'deleteMajor' => 'destroy'
     ];
     public function render()
     {
 
-        $this->major = Major::select('id', 'major_code', 'major_name', 'major_alias')->get();
+        $this->major = Major::where('major_name', 'like', '%' . $this->search . '%')->get();
         return view('livewire.show-major');
     }
     public function store()

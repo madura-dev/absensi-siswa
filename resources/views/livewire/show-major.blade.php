@@ -23,6 +23,17 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
+                <div class="card-body border-bottom py-3">
+                    <div class="d-flex">
+                        <div class="text-secondary ms-auto">
+                            Search:
+                            <div class="d-inline-block ms-2">
+                                <input type="text" class="form-control form-control-sm" aria-label="Search invoice"
+                                    wire:model="search" placeholder="Masukkan nama...">
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="table-responsive">
                     <table class="table">
 
