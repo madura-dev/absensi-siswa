@@ -4,11 +4,18 @@
             <h3 class="card-title">Data Guru</h3>
         </div>
         <div class="card-body border-bottom py-3">
+            <div>
+                @if (session()->has('message'))
+                    <div class="alert alert-success">
+                        {{ session('message') }}
+                    </div>
+                @endif
+            </div>
             <div class="d-flex">
                 <div class="text-secondary ms-auto">
                     Search:
                     <div class="d-inline-block ms-2">
-                        <input type="text" class="form-control" aria-label="Search invoice" wire:model="search"
+                        <input type="text" class="form-control" aria-label="Search teachers" wire:model="search"
                             placeholder="Masukkan nama...">
                     </div>
                 </div>
