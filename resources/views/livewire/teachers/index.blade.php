@@ -37,7 +37,7 @@
                         <td>{{ $teacher->teacher_id }}</td>
                         <td>{{ $teacher->name }}</td>
                         <td>{{ $teacher->gender }}</td>
-                        <td>{{ $teacher->birthplace }}, {{ $teacher->birthday }}</td>
+                        <td>{{ $teacher->birthplace }}, {{ dateFormat($teacher->birthday) }}</td>
                         <td>{{ $teacher->address }}</td>
                         <td>{{ $teacher->last_education }}</td>
                         <td>{{ $teacher->phone_number }}</td>

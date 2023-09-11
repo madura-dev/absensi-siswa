@@ -20,10 +20,10 @@ return new class extends Migration
             $table->date('birthday');
             $table->string('address', 100);
             $table->string('last_education', 50);
-            $table->string('phone_number', 15)->unique();
-            $table->string('position', 30);
+            $table->string('phone_number', 20)->unique();
+            $table->string('position', 100);
             $table->integer('nominal_salary');
-            $table->string('email', 30)->unique();
+            $table->string('email', 250)->unique();
             $table->string('password', 255);
             $table->string('image', 100);
             $table->timestamps();

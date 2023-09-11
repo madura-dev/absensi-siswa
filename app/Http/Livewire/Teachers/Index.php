@@ -13,6 +13,6 @@ class Index extends Component
     public $search = '';
     public function render()
     {
-        return view('livewire.teachers.index', ['teachers' => Teacher::where('name', 'like', '%' . $this->search . '%')->paginate(5)])->layout('layouts.app', ['title' => 'Guru']);;
+        return view('livewire.teachers.index', ['teachers' => Teacher::where('name', 'like', '%' . $this->search . '%')->paginate(10)])->layout('layouts.app', ['title' => 'Guru']);;
     }
 }

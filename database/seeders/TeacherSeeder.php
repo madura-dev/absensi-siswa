@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Livewire\Teachers\Create;
 use App\Models\Teacher;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,7 +14,7 @@ class TeacherSeeder extends Seeder
      */
     public function run(): void
     {
-        $classrooms = [
+        /*$classrooms = [
             [
                 'teacher_id' => '123456789123456789',
                 'name' => 'Fauzan',
@@ -107,6 +108,8 @@ class TeacherSeeder extends Seeder
         ];
         foreach($classrooms as $classroom){
             Teacher::create($classroom);
-        }
+        }*/
+
+        Teacher::factory()->count(100)->create();
     }
 }
