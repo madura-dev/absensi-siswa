@@ -76,6 +76,13 @@
                         </tbody>
                     </table>
                 </div>
+                <div class="card-footer d-flex align-items-center">
+                    <p class="text-secondary m-0">Showing <span>{{ $major->firstItem() }}</span> to <span>
+                            {{ $major->lastItem() }} </span> of <span>{{ $major->total() }}</span> entries</p>
+                    <ul class="pagination m-0 ms-auto">
+                        {{ $major->links() }}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

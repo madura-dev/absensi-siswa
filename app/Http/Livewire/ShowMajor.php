@@ -4,11 +4,13 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Major;
+use Livewire\WithPagination;
 
 class ShowMajor extends Component
 {
-
-    public $major, $major_code, $major_name, $major_alias, $major_id;
+    use WithPagination;
+    protected $paginationTheme = 'bootstrap';
+    public $major_code, $major_name, $major_alias, $major_id;
     public $updateMajor = false;
     public $search = '';
     protected $listeners = [
@@ -16,9 +18,10 @@ class ShowMajor extends Component
     ];
     public function render()
     {
+        return view('livewire.show-major', ['major' => Major::where('major_name', 'like', '%' . $this->search . '%')->paginate(5)]);
 
-        $this->major = Major::where('major_name', 'like', '%' . $this->search . '%')->get();
-        return view('livewire.show-major');
+        // $this->major = Major::where('major_name', 'like', '%' . $this->search . '%')->paginate(5);
+        // return view('livewire.show-major');
     }
     public function store()
     {
