@@ -6,7 +6,7 @@
         </button>
         <h1 class="navbar-brand d-flex justify-content-start navbar-brand-autodark ms-2">
             <a href=".">
-                <img src="./static/logo-white.svg" width="110" height="32" alt="Tabler"
+                <img src="{{asset('static/logo-white.svg')}}" width="110" height="32" alt="Tabler"
                     class="navbar-brand-image">
             </a>
         </h1>
