@@ -102,10 +102,10 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item" href="./empty.html">
+                                <a class="dropdown-item" href="{{route('teacher.create')}}">
                                     Tambah Guru
                                 </a>
-                                <a class="dropdown-item" href="/guru">
+                                <a class="dropdown-item" href="{{route('teacher.index')}}">
                                     Semua Guru
                                 </a>
                             </div>
