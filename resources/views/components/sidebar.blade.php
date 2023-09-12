@@ -176,7 +176,10 @@
                     <div class="dropdown-menu">
                         <div class="dropdown-menu-columns">
                             <div class="dropdown-menu-column">
-                                <a class="dropdown-item" href="./empty.html">
+                                <a class="dropdown-item" href="/mapel/create">
+                                    Tambah Mapel
+                                </a>
+                                <a class="dropdown-item" href="/mapel">
                                     Semua Mapel
                                 </a>
                                 <a class="dropdown-item" href="./accordion.html">
