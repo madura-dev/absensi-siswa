@@ -50,7 +50,7 @@
                             <td>{{ $teacher->phone_number }}</td>
                             <td>{{ $teacher->position }}</td>
                             <td>
-                                <a href="{{ route('teacher.edit', $teacher) }}"
+                                <a href="/guru/{{ $teacher->id }}/edit"
                                     class="btn btn-warning btn-sm w-50 btn-icon">
                                     <i class="ti ti-edit"></i>
                                 </a>

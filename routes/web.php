@@ -27,7 +27,7 @@ Route::middleware([
     Route::group(['prefix' => 'guru'], function () {
         Route::get('/', Index::class)->name('teacher.index');
         Route::get('/create', Create::class)->name('teacher.create');
-        Route::get('/{teacher}/edit', Edit::class)->name('teacher.edit');
+        Route::get('/{teachers}/edit', Edit::class)->name('teacher.edit');
 
     });
     Route::group(['prefix' => 'mapel'], function () {

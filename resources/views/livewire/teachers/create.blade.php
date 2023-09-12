@@ -2,94 +2,96 @@
     {{-- Care about people's approval and you will be their prisoner. --}}
     <div class="container-xl" style="box-align: center">
         <div class="row row-cards">
-          <div class="col-md-6">
-            <div class="card">
-                  <div class="card-header">
-                    <i class="ti ti-user"></i>
+
+            <div class="col-md-6">
+                <div class="card">
+                      <div class="card-header">
+                        <i class="ti ti-user"></i>
                         <strong>
                             Biodata Guru
                         </strong>
-                  </div>
-                  <div class="card-body">
-                    <form wire:submit.prevent="store" class="card">
-                    <div class="mb-3">
-                        <label class="form-label">Nomor Induk Guru</label>
-                        <div>
-                            <x-form-input name="teacher_id" type="number" wire:model="teacher_id" placeholder="Masukan Nomor Induk Guru"/>
+                      </div>
+                      <div class="card-body">
+                <form wire:submit.prevent="store">
+                        <div class="mb-3">
+                            <label class="form-label">Nomor Induk Guru</label>
+                            <div>
+                                <x-form-input name="teacher_id" type="number" wire:model="teacher_id" placeholder="Masukan Nomor Induk Guru"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Nama Lengkap</label>
+                            <div>
+                                <x-form-input name="name" wire:model="name" placeholder="Masukan Nama Lengkap"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Jenis Kelamin</label>
+                            <div>
+                                <x-form-select name="gender" wire:model="gender">
+                                    <option value="Laki-laki">Pilih Jenis Kelamin</option>
+                                    <option value="Laki-laki">Laki-Laki</option>
+                                    <option value="Perempuan">Perempuan</option>
+                                </x-form-select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Tempat Lahir</label>
+                            <div>
+                                <x-form-input name="birthplace" wire:model="birthplace" placeholder="Masukan Tempat Lahir"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Tanggal Lahir</label>
+                            <div>
+                                <x-form-input name="birthday" wire:model="birthday" placeholder="Masukan Tempat Lahir" type="date"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Alamat</label>
+                            <div>
+                                <textarea class="form-control" wire:model="address" rows="5" name="address"></textarea>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Pendidikan Terakhir</label>
+                            <div>
+                                <x-form-select name="last_education" wire:model="last_education">
+                                    <option value="SD">Pilih Pendidikan Terakhir</option>
+                                    <option value="SD">SD</option>
+                                    <option value="SMA">SLTA</option>
+                                    <option value="S1">S1</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S2">S2</option>
+                                    <option value="S3">S3</option>
+                                </x-form-select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Nomer Telepon</label>
+                            <div>
+                                <x-form-input name="phone_number" wire:model="phone_number" placeholder="Masukan Telepon"/>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Jabatan</label>
+                            <div>
+                                <x-form-select name="position" wire:model="position">
+                                    <option value="guru_honorer">Pilih Jabatan</option>
+                                    <option value="guru_honorer">Guru Honorer</option>
+                                    <option value="guru_honorer">Kepala Sekolah</option>
+                                </x-form-select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label required">Nominal Gaji</label>
+                            <div>
+                                <x-form-input name="nominal_salary" wire:model="nominal_salary" placeholder="Masukan Telepon"/>
+                            </div>
                         </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Nama Lengkap</label>
-                        <div>
-                            <x-form-input name="name" wire:model="name" placeholder="Masukan Nama Lengkap"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Jenis Kelamin</label>
-                        <div>
-                            <x-form-select name="gender" wire:model="gender">
-                                <option value="Laki-laki">Pilih Jenis Kelamin</option>
-                                <option value="Laki-laki">Laki-Laki</option>
-                                <option value="Perempuan">Perempuan</option>
-                            </x-form-select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Tempat Lahir</label>
-                        <div>
-                            <x-form-input name="birthplace" wire:model="birthplace" placeholder="Masukan Tempat Lahir"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Tanggal Lahir</label>
-                        <div>
-                            <x-form-input name="birthday" wire:model="birthday" placeholder="Masukan Tempat Lahir" type="date"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Alamat</label>
-                        <div>
-                            <textarea class="form-control" wire:model="address" rows="5" name="address"></textarea>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Pendidikan Terakhir</label>
-                        <div>
-                            <x-form-select name="last_education" wire:model="last_education">
-                                <option value="SD">Pilih Pendidikan Terakhir</option>
-                                <option value="SD">SD</option>
-                                <option value="SMA">SLTA</option>
-                                <option value="S1">S1</option>
-                                <option value="S2">S2</option>
-                                <option value="S2">S2</option>
-                                <option value="S3">S3</option>
-                            </x-form-select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Nomer Telepon</label>
-                        <div>
-                            <x-form-input name="phone_number" wire:model="phone_number" placeholder="Masukan Telepon"/>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Jabatan</label>
-                        <div>
-                            <x-form-select name="position" wire:model="position">
-                                <option value="guru_honorer">Pilih Jabatan</option>
-                                <option value="guru_honorer">Guru Honorer</option>
-                            </x-form-select>
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label required">Nominal Gaji</label>
-                        <div>
-                            <x-form-input name="nominal_salary" wire:model="nominal_salary" placeholder="Masukan Telepon"/>
-                        </div>
                     </div>
                 </div>
-            </div>
-            </div>
 
         <div class="col-md-6">
             <div class="card">
