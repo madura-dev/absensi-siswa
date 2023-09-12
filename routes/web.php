@@ -3,7 +3,7 @@
 use App\Http\Livewire\ShowMajor;
 use App\Http\Livewire\Courses\Showcourses;
 use App\Http\Livewire\Courses\AddCourses;
-use App\Http\Livewire\Courses\Editcourses;
+use App\Http\Livewire\Courses\UpdateCourses;
 
 use App\Http\Livewire\Teachers\Create;
 use App\Http\Livewire\Teachers\Edit;
@@ -14,7 +14,7 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 Route::get('/jurusan', ShowMajor::class)->name('jurusan');
-
+Route::get('/edit/{id}', UpdateCourses::class)->name('courses.edit');
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -33,7 +33,7 @@ Route::middleware([
     Route::group(['prefix' => 'mapel'], function () {
         Route::get('/', Showcourses::class)->name('courses.index');
         Route::get('/create', AddCourses::class)->name('courses.create');
-        Route::get('/{courses}/edit', Edit::class)->name('courses.edit');
 
     });
 });
+

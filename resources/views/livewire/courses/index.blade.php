@@ -47,8 +47,8 @@
                                     </td>
 
                                     <td>
-                                        <button wire:click="edit({{ $Course->id }})"
-                                            class="btn btn-primary btn-sm">Edit</button>
+                                        <a href="{{ route('courses.edit', $Course->id) }}"
+                                            class="btn btn-primary btn-sm">Edit</a>
                                         <button onclick="deleteCourse({{ $Course->id }})"
                                             class="btn btn-danger btn-sm">Delete</button>
                                     </td>
