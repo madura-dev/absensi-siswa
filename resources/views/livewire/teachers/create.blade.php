@@ -111,6 +111,21 @@
                             <x-form-input type="password" wire:model="password" name="password" placeholder="Masukan Password"/>
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <div class="row">
+                        @if ($image)
+                          <div class="col-auto">
+                            <span class="avatar avatar-xl" style="background-image: url({{ $image->temporaryUrl() }})">
+                            </div>
+                          @endif
+                          <div class="col">
+                            <div class="mb-3">
+                              <label class="form-label">Foto Profile</label>
+                              <x-form-input type="file" wire:model="image" name="image" placeholder="Masukan Gambar pofile"/>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                 </div>
                 <div class="card-footer text-end">
                     <button class="btn btn-primary" type="submit">

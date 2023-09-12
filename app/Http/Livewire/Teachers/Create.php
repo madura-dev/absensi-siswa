@@ -4,10 +4,12 @@ namespace App\Http\Livewire\Teachers;
 
 use Livewire\Component;
 use App\Models\Teacher;
+use Livewire\WithFileUploads;
 
 class Create extends Component
 {
-    public $teacher_id, $name, $gender, $birthplace, $birthday, $address, $last_education, $phone_number, $position, $nominal_salary, $email, $password;
+    use WithFileUploads;
+    public $teacher_id, $name, $gender, $birthplace, $birthday, $address, $last_education, $phone_number, $position, $nominal_salary, $email, $password, $image;
     public function render()
     {
         return view('livewire.teachers.create');
@@ -29,6 +31,13 @@ class Create extends Component
             'password'          => 'required',
         ]);
 
+        if($this->image){
+            $file_name = time() . "." . $this->image->extension();
+            $this->image->storeAs('images', $file_name);
+        } else {
+            $file_name = 'default.jpg';
+        }
+
         Teacher::create([
             'teacher_id'        => $this->teacher_id,
             'name'              => $this->name,
@@ -42,7 +51,7 @@ class Create extends Component
             'nominal_salary'    => $this->nominal_salary,
             'email'             => $this->email,
             'password'          => $this->password,
-            'image'             => 'gambar.jpeg',
+            'image'             => $file_name,
         ]);
 
         session()->flash('message', 'Data Berhasil Disimpan.');
