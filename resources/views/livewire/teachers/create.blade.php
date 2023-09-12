@@ -1,6 +1,6 @@
 <div>
     {{-- Care about people's approval and you will be their prisoner. --}}
-    <div class="container-xl">
+    <div class="container-xl" style="box-align: center">
         <div class="row row-cards">
           <div class="col-md-6">
             <div class="card">
@@ -11,7 +11,7 @@
                         </strong>
                   </div>
                   <div class="card-body">
-                    <form wire:submit.prevent="store">
+                    <form wire:submit.prevent="store" class="card">
                     <div class="mb-3">
                         <label class="form-label">Nomor Induk Guru</label>
                         <div>
